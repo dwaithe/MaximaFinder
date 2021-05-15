@@ -27,6 +27,10 @@ The module is imported as follows.
 The first stage in the maxima finding algorithm is to find the local maxima, this can be achieved in different ways but usually represents the identification of the maximum pixel in each 3x3 neighbourhood (in the default case). Once the local maxima have been identified it is then possible to find the maxima across an image. Here is some typical code:
 
 ```shell
+from PIL import Image
+import numpy as np
+from findmaxima2d import find_maxima, find_local_maxima
+
 img_data = Image.open('002eggs.png')
 ntol = 10 #Noise Tolerance.
 
