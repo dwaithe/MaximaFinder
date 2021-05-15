@@ -13,8 +13,13 @@ In this repository there are two different implementations of the algorithm:
 * find_maxima.ipynb - pure Python version of the code (slow).  
 * find_maxima_cython.ipynb - Python and Cython version of the code (super fast) which requires compilation.  
 
-To build the cython version of the code (recommended). Please naviagate to the cython_findmaxima directory and run:  
-    python setup.py build-ext --inplace  This will install the package locally (recommended).
+To build the cython version of the code (recommended). 
+To do so please :
+
+Either use pip. E.g python3 -m pip install findmaxima2d.
+
+Or to install from this repository please run:  
+    python setup.py build-ext --inplace  This will install the package locally.
     To install into your Python's site-packages directory:
     python setup.py install
 
