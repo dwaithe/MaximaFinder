@@ -81,7 +81,7 @@ def find_maxima(img_data_py,local_max_py,ntol_py):
 	cdef int nearestI = 0
 
 
-	cdef np.ndarray[DTYPE_64, ndim=1] indx
+	cdef np.ndarray[np.int32_t, ndim=1] indx
 	ypts, xpts = np.where(local_max == 1)
 	
 	#Find the corresponding intensities
@@ -105,8 +105,8 @@ def find_maxima(img_data_py,local_max_py,ntol_py):
 	
 
 	#This defines the pixel neighbourhood 8-connected neighbourhood [3x3]
-	cdef np.ndarray[DTYPE_64, ndim=1] dir_x = np.array([0,  1,  1,  1,  0, -1, -1, -1])
-	cdef np.ndarray[DTYPE_64, ndim=1] dir_y = np.array([-1, -1,  0,  1,  1,  1,  0, -1])
+	cdef np.ndarray[np.int32_t, ndim=1] dir_x = np.array([0,  1,  1,  1,  0, -1, -1, -1], dtype=np.int32)
+	cdef np.ndarray[np.int32_t, ndim=1] dir_y = np.array([-1, -1,  0,  1,  1,  1,  0, -1], dtype=np.int32)
 
 	#At each stage we classify our pixels. We use 2n as we can use more than one definition
 	#together.
@@ -240,7 +240,7 @@ def find_maxima(img_data_py,local_max_py,ntol_py):
 				
 				dist2 = (xEqual-x[dv])**2+(yEqual-y[dv])**2
 
-				indx = np.arange(0,listlen)
+				indx = np.arange(0,listlen).astype(np.int32)
 				rd_indx = indx[dv]
 				nearestI = rd_indx[np.argmin(dist2)]
 				
