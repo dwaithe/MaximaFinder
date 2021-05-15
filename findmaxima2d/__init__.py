@@ -1,0 +1,1 @@
+from .findmaxima2d import find_local_maxima, find_maxima
