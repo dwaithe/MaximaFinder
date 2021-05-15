@@ -4,13 +4,16 @@ from distutils.extension import Extension
 from Cython.Build import cythonize
 
 setup(name='findmaxima2d',
-      version='0.0.16',
+      version='0.0.25',
       description='Python 2-D Maxima finding algorithm (findmaxima2d) recreated from implementation in ImageJ/Fiji',
       url='https://github.com/dwaithe/MaximaFinder/tree/master/findmaxima2d',
       author='Dominic Waithe',
       author_email='dominic_waithe@hotmail.com',
       license='GNU',
       packages=['findmaxima2d'],
+      install_requires=[
+          'cython','scipy','numpy'
+      ],
 
       
       
