@@ -6,11 +6,12 @@ The first stage in the maxima finding algorithm is to find the local maxima. Thi
 Starting with the brightest maxima and working down the intensities:
 
 Expand out (‘flood fill’) from each maxima location. Neighbouring pixels within a noise tolerance (notl) of the maxima are scanned until the region within tolerance is exhausted.
-If the pixels are equal to the maxima, mark this as equal.
-If a greater maxima is met, ignore the active maxima.
-If the pixels are less than maxima, but greater than maxima minus the noise tolerance, mark as listed.
-Mark all ‘listed’ pixels 'processed' if they are included within a valid peak region, otherwise reset them.
-From the regions containing a peak, calculate the best pixel to be considered as maxima based on minimum distance calculation with all those maxima considered equal.
+* If the pixels are equal to the maxima, mark this as equal.
+* If a greater maxima is met, ignore the active maxima.
+* If the pixels are less than maxima, but greater than maxima minus the noise tolerance, mark as listed.
+* Mark all ‘listed’ pixels 'processed' if they are included within a valid peak region, otherwise reset them.
+* From the regions containing a peak, calculate the best pixel to be considered as maxima based on minimum distance calculation with all those maxima considered equal.  
+Repeat process for remaining maxima. 
 
 In this repository there are two different implementations of the algorithm:  
 * legacy_find_maxima.ipynb - pure Python version of the code (slow).  
