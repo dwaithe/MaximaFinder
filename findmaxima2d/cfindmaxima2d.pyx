@@ -4,7 +4,7 @@ import numpy as np
 cimport numpy as np
 import sys
 
-from is_within import is_within
+from .is_within import is_within
 DTYPE = np.float64
 ctypedef np.float64_t DTYPE_f64
 DTYPE = np.float32
