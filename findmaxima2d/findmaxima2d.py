@@ -24,7 +24,7 @@ def find_local_maxima(img_data,size=3):
 	local_max = np.zeros((img_data.shape))
 	local_max[max_out == img_data] = 1
 	local_max[img_data == np.min(img_data)] = 0
-	return local_max.astype(np.bool)
+	return local_max.astype(bool)
 
 def find_maxima(img_data, local_max, ntol):
 	"""
